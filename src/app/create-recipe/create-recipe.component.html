@@ -44,7 +44,7 @@
           <div class="row">
             <div class="col-sm-12">
               <h3>Ingredientes:</h3>
-              <div  formArrayName = "RecipeIngredientDetails" *ngFor="let ingredient of recipeDetailForm.get('RecipeIngredientDetails').value; let i = index;" >
+              <div  formArrayName = "RecipeIngredientDetails" *ngFor="let ingredient of recipeDetailForm.get('RecipeIngredientDetails')['controls']; let i = index;" >
                 <div [formGroupName]="i">
                   <div class="row">
                     <div class="col-sm-6">
