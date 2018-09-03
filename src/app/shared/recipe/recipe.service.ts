@@ -6,7 +6,7 @@ import { Recipe } from './recipe.model';
   providedIn: 'root'
 })
 export class RecipeService {
-  readonly rootUrl = "http://stackoverflowcgvm.apphb.com/";
+  readonly rootUrl = "https://stackoverflowcgvm.apphb.com/";
   private http : HttpClient;
   constructor(http: HttpClient) {
     this.http = http;

@@ -6,7 +6,7 @@ import { User } from './user.model';
   providedIn: 'root'
 })
 export class UserService {
-  readonly rootUrl = "http://stackoverflowcgvm.apphb.com/";
+  readonly rootUrl = "https://stackoverflowcgvm.apphb.com/";
   private http : HttpClient;
   constructor(http: HttpClient) {
     this.http = http;
