@@ -10,6 +10,10 @@ img{
     display: block;
 }
 
+.bg-green{
+    background-color: #93c33d !important;
+}
+
 .card {
     width: 100%;
     max-width: 330px;
