@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: "Century Gothic"   ;
+}
+
+.navbar>a{
+    color: white;   
+}
+
+hr{
+    color: #93c33d;
+    background-color: #93c33d;
+}
+
+p>i{
+    color: orange;
+}
+
+.card{
+    min-width: "210px";
+}
+
+button{
+    background: orange;
+    color: white;
+}

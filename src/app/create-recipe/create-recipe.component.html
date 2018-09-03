@@ -1,0 +1,90 @@
+<app-nav-bar></app-nav-bar>
+<br>
+<div class="container">
+  <div class="card">
+    <form class="needs-validation" [formGroup]="recipeDetailForm" (ngSubmit)="onSubmit(recipeDetailForm);">
+      <div class="card-body">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" class="form-control" formControlName="Name">
+        </div>
+        <hr>
+        <div class="card-text">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="image">Url Imagen: </label>
+                <input id="image" type="url" class="form-control" formControlName="ImageUrl" >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="description">Descripción:</label>
+                <textarea formControlName="Description" id="description" cols="15" rows="10" class="form-control">
+                    </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="servings">Porciones:</label>
+                <input id="servings" formControlName="Servings" type="number" min="0" class="form-control">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="time">Tiempo:</label>
+                <input type="text" formControlName="AmountOfTime"  id="time" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <h3>Ingredientes:</h3>
+              <div  formArrayName = "RecipeIngredientDetails" *ngFor="let ingredient of recipeDetailForm.get('RecipeIngredientDetails').controls; let i = index;" >
+                <div [formGroupName]="i">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="'ingredient.IngredientName'+ i">Ingrediente:</label>
+                        <input type="text" formControlName="IngredientName" class="form-control" >
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="'ingredient.QuantityDescription'+ i" >Cantidad:</label>
+                        <input type="text" formControlName="QuantityDescription" class="form-control" >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="button" class="btn" (click)="addIngredient();">Agregar Ingrediente</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="steps">Pasos:</label>
+                <textarea formControlName="Steps" cols="20" rows="10" class="form-control">
+                    </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="text-center">
+                <button type="submit" class="btn">Crear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<header class="navbar navbar-expand flex-column flex-md-row" style="background-color:  #93c33d">
+    <a class="navbar-brand mr-0 mr-md-2" href="/">
+      <img src="/assets/images/cooking-book.png" width="90px;">
+    </a>
+    <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+      <form #searchForm="ngForm" (ngSubmit)="search(searchForm);">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-search"></i></span>
+          </div>
+          <input name="searchTerm" class="form-control" type="text" placeholder="search..." #searhTerm="ngModel" [(ngModel)]="searchTerm">
+        </div>
+        <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+      </form>
+    </div>
+    <a *ngIf="this.getUser() === null" class="mb-3 mb-md-0 ml-md-3" routerLink="/signin">SIGN IN</a>
+    <a *ngIf="this.getUser() !== null" class="mb-3 mb-md-0 ml-md-3" href="#" (click) = "signOut();">SIGN OUT</a>
+    <a *ngIf="this.getUser() === null" class="btn bg-dark mb-3 mb-md-0 ml-md-3" routerLink="/signup">REGISTER</a>
+  </header>

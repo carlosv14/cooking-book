@@ -1,0 +1,17 @@
+button{
+    background: #2eceb0;
+    color: white;
+}
+
+img{
+    width: 100%;
+    max-width: 330.6px;
+    margin: auto;
+    display: block;
+}
+
+.card {
+    width: 100%;
+    max-width: 330px;
+    margin: auto;
+}

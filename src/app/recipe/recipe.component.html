@@ -1,0 +1,88 @@
+<app-nav-bar></app-nav-bar>
+<div *ngIf="recipe">
+    <a class="header-image-wrapper" routerLink="/recipes/{{recipe.Id}}">
+        <div class="header-image bg-image" [ngStyle]="{ 'background-image': 'url(' + recipe.ImageUrl + ')'}">
+            <img src="{{recipe.ImageUrl}}">
+        </div>
+    </a>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><strong>{{recipe.Name}}</strong></h5>
+                <hr>
+                <div class="card-text">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <p>{{recipe.Description}}</p>
+                            <button *ngIf="this.getUser() !==null" (click)="vote();" class="btn"><i class="fas fa-thumbs-up"></i> Votar</button>
+                        </div>
+
+                        <div class="col-sm-5 table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border-right-orange border-bottom-orange border-top-orange">
+                                            Porciones:
+                                        </td>
+                                        <td class="border-bottom-orange border-top-orange">
+                                            <p><i class="fas fa-utensils"></i> {{recipe.Servings}} </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-right-orange border-bottom-orange">
+                                            Tiempo de preparación:
+                                        </td>
+                                        <td class="border-bottom-orange">
+                                            <p><i class="fas fa-clock"></i> {{recipe.AmountOfTime}} </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-right-orange border-bottom-orange">
+                                            Votos:
+                                        </td>
+                                        <td class="border-bottom-orange">
+                                            <p><i class="fas fa-heart"></i> {{recipe.Votes}} </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>POR: {{recipe.Author | uppercase}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Ingredientes</strong></h5>
+                <div class="card-text">
+                    <div class="row">
+                        <div *ngFor="let detail of recipe.RecipeIngredientDetails" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div>
+                                <p class="text-muted">
+                                    {{detail.QuantityDescription}}
+                                </p>
+                                <p>
+                                    {{detail.IngredientName}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Pasos</strong></h5>
+                <div class="card-text whitespace-wrap">
+                    {{recipe.Steps}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

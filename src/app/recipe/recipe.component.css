@@ -1,0 +1,61 @@
+.header-image-wrapper{
+    display: block;
+    overflow: hidden;
+}
+
+.header-image{
+    max-height: 350px;
+}
+
+.bg-image{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+.card{
+    position: relative;
+    top: -100px;
+    opacity: 0.8;
+}
+
+.description{
+    width: 60%;
+    float: left;
+    padding-right: 40px;
+}
+
+.detail{
+    width: 40%;
+    float: left;
+}
+
+td{
+    padding-right: 10px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+.border-right-orange{
+    border-right: 2px solid orange;
+}
+
+.border-bottom-orange{
+    border-bottom: 2px solid orange;
+}
+
+.border-top-orange{
+    border-top: 2px solid orange;
+}
+
+.text-muted{
+    float: left;
+    padding-right: 5px;
+}
+
+.whitespace-wrap{
+    white-space: pre-wrap;
+}

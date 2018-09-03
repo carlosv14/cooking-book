@@ -1,0 +1,44 @@
+<app-nav-bar></app-nav-bar>
+<br>
+
+<div class="container">
+  <button *ngIf="this.getUser() !== null" (click) = "this.router.navigate(['/recipes/create']);" class="btn">Crear receta</button>
+  <br>
+  <br>
+
+  <div class="row">
+    <div *ngFor="let recipe of recipes" class="col-lg-4 col-md-12 col-sm-12 col-xs-12  py-2">
+      <div (click)="onSelect(recipe);"  class="card h-100">
+        <img class="card-img-top" src="{{recipe.ImageUrl}}">
+        <div class="card-body">
+          <a routerLink="/recipes/{{recipe.Id}}"><h5 class="card-title">{{recipe.Name}}</h5></a>
+          <hr>
+          <table>
+            <tr>
+              <td>
+                <p>
+                  <i class="fas fa-clock"></i>
+                  {{recipe.AmountOfTime}}
+                </p>
+              </td>
+              <td>
+                <p>
+                  <i class="fas fa-utensils"></i>
+                  {{recipe.Servings}} Porciones
+                </p>
+              </td>
+            </tr>
+          </table>
+          <p class="font-weight-bold">
+            Autor: {{recipe.Author | uppercase}}
+            <br>
+            <i class="fas fa-heart"></i>
+            {{recipe.Votes}} Votos
+          </p>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+  
+</div>
